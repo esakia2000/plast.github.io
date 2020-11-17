@@ -1,0 +1,1438 @@
+/* Typography
+-------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url("https://raw.githubusercontent.com/10clouds/codepen/tesla-hero-slider/tesla-hero-slider/src/assets/fonts/BebasNeue-Regular.otf");
+}
+
+
+/* Breakpoints
+-------------------------------------------------------------- */
+
+
+/* Media queries
+-------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+.header-wrapper {
+    width: 100%;
+    height: 42px;
+    background-color: #EEFF00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrapper h2 {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: oswald;
+    display: inline-block;
+}
+
+:root {
+    --btn-color: white;
+    --car-color: white;
+    --bckg-height: 300px;
+    --shadow-opacity: 0.2;
+    --car-shadow-height: 300px;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    max-width: 780px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .container {
+        max-width: 1550px;
+    }
+}
+
+
+/* Body, html
+-------------------------------------------------------------- */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 22px;
+    line-height: 2.2rem;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: #fff;
+}
+
+@media only screen and (min-width: 992px) {
+    body {
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 26px;
+        line-height: 2.6rem;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    body {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Headers
+-------------------------------------------------------------- */
+
+h1 {
+    margin: 0;
+    font-size: 5.5rem;
+    line-height: 1;
+    font-family: "BebasNeue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.9px;
+    font-weight: 500;
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 7rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    h1 {
+        font-size: 9.2rem;
+    }
+}
+
+
+/* Text, Links
+-------------------------------------------------------------- */
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* Button
+-------------------------------------------------------------- */
+
+.button {
+    position: relative;
+    height: 55px;
+    width: 180px;
+    background: none;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) {
+    .button {
+        font-size: 1.8rem;
+        width: 210px;
+    }
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:hover:before {
+    height: 100%;
+    opacity: 1;
+}
+
+.button:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    background-color: var(--btn-color);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.button__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 55px;
+    width: 180px;
+    border: 1px solid var(--btn-color);
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.button__border:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 150%;
+    height: 220%;
+    opacity: 0.3;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, var(--btn-color) 1%, transparent 80%);
+    z-index: -1;
+    -webkit-transition: opacity 0.6s ease-in-out, background 0.6s linear 0.5s;
+    transition: opacity 0.6s ease-in-out, background 0.6s linear 0.5s;
+}
+
+@media only screen and (min-width: 992px) {
+    .button__border {
+        width: 210px;
+    }
+}
+
+.button__border--enter {
+    border: 1px solid transparent;
+}
+
+.button__border--enter:after {
+    opacity: 0;
+    background: transparent;
+}
+
+.button__border--exit {
+    border: 1px solid transparent;
+}
+
+.button__border--exit:after {
+    opacity: 0.2;
+    background: transparent;
+}
+
+
+/* Header
+-------------------------------------------------------------- */
+
+.tesla-header {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-header {
+        padding: 50px 0 60px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-header {
+        padding: 80px 0;
+    }
+}
+
+.tesla-header__logo img {
+    height: 12.5px;
+    width: auto;
+}
+
+.tesla-header__nav img {
+    height: 20px;
+    width: auto;
+}
+
+
+/* Slide Item
+-------------------------------------------------------------- */
+
+.tesla-slide {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+    /* Slide Item Img
+  -------------------------------------------------------------- */
+    /* Slide Item Img
+  -------------------------------------------------------------- */
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide {
+        margin-top: 70px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slide {
+        margin-top: 0;
+        width: calc(100% - 150px);
+    }
+}
+
+.tesla-slide__img {
+    position: absolute;
+    overflow: hidden;
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+    -webkit-transition: opacity 0.8s ease-in-out 0.05s, -webkit-transform 0.8s ease-in-out 0.1s;
+    transition: opacity 0.8s ease-in-out 0.05s, -webkit-transform 0.8s ease-in-out 0.1s;
+    transition: opacity 0.8s ease-in-out 0.05s, transform 0.8s ease-in-out 0.1s;
+    transition: opacity 0.8s ease-in-out 0.05s, transform 0.8s ease-in-out 0.1s, -webkit-transform 0.8s ease-in-out 0.1s;
+}
+
+@media only screen and (max-width: 767px) {
+    .tesla-slide__img {
+        width: 100%;
+        -webkit-transform: none;
+        transform: none;
+        overflow: initial;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide__img {
+        margin-top: 0;
+        top: -5%;
+        right: -50%;
+        z-index: -1;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .tesla-slide__img {
+        top: -35%;
+        right: -25%;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slide__img {
+        top: -50%;
+        right: -19%;
+    }
+}
+
+.tesla-slide__img:before {
+    position: absolute;
+    content: '';
+    width: calc(var(--car-shadow-height));
+    height: calc(var(--car-shadow-height) * 1.4);
+    top: 45%;
+    left: 60%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0.35;
+    background: radial-gradient(ellipse at center, var(--car-color) 10%, transparent 75%);
+    -webkit-transition: opacity 0.5s ease-in 0.3s;
+    transition: opacity 0.5s ease-in 0.3s;
+    z-index: 9;
+}
+
+@media only screen and (min-width: 992px) {
+    .tesla-slide__img:before {
+        width: calc(var(--car-shadow-height) * 2);
+        height: calc(var(--car-shadow-height) * 1.8);
+        opacity: 0.4;
+    }
+}
+
+.tesla-slide__img-floor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.7s ease-in-out 0.4s;
+    transition: all 0.7s ease-in-out 0.4s;
+}
+
+.tesla-slide__img-car {
+    -webkit-transition: opacity 0.6s ease-in-out 0.1s;
+    transition: opacity 0.6s ease-in-out 0.1s;
+}
+
+.tesla-slide__img--enter {
+    opacity: 0;
+    -webkit-transform: translateX(-5%) scale(1.1);
+    transform: translateX(-5%) scale(1.1);
+}
+
+.tesla-slide__img--enter .tesla-slide__img-floor {
+    opacity: 0;
+}
+
+.tesla-slide__img--enter .tesla-slide__img-car {
+    opacity: 0;
+}
+
+.tesla-slide__img--enter:before {
+    opacity: 0;
+}
+
+.animation-back .tesla-slide__img--enter {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.tesla-slide__img--exit {
+    -webkit-transition: opacity 0.5s ease-in-out 0.4s, -webkit-transform 0.8s ease-in-out 0.3s;
+    transition: opacity 0.5s ease-in-out 0.4s, -webkit-transform 0.8s ease-in-out 0.3s;
+    transition: opacity 0.5s ease-in-out 0.4s, transform 0.8s ease-in-out 0.3s;
+    transition: opacity 0.5s ease-in-out 0.4s, transform 0.8s ease-in-out 0.3s, -webkit-transform 0.8s ease-in-out 0.3s;
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.tesla-slide__img--exit .tesla-slide__img-floor {
+    -webkit-transition: all 0.5s ease-in-out 0.2s;
+    transition: all 0.5s ease-in-out 0.2s;
+    opacity: 0;
+}
+
+.tesla-slide__img--exit:before {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.animation-back .tesla-slide__img--exit {
+    -webkit-transition: opacity 0.5s ease-in-out 0.6s, -webkit-transform 0.9s ease-in-out 0.1s;
+    transition: opacity 0.5s ease-in-out 0.6s, -webkit-transform 0.9s ease-in-out 0.1s;
+    transition: opacity 0.5s ease-in-out 0.6s, transform 0.9s ease-in-out 0.1s;
+    transition: opacity 0.5s ease-in-out 0.6s, transform 0.9s ease-in-out 0.1s, -webkit-transform 0.9s ease-in-out 0.1s;
+    -webkit-transform: translateX(-5%) scale(1.1);
+    transform: translateX(-5%) scale(1.1);
+}
+
+.animation-back .tesla-slide__img--exit .tesla-slide__img-floor {
+    -webkit-transition: all 0.5s ease-in-out 0.2s;
+    transition: all 0.5s ease-in-out 0.2s;
+    opacity: 0;
+}
+
+.animation-back .tesla-slide__img--exit .tesla-slide__img-car {
+    -webkit-transition: opacity 0.6s ease-in-out 0.5s;
+    transition: opacity 0.6s ease-in-out 0.5s;
+    opacity: 0;
+}
+
+.animation-back .tesla-slide__img--exit:before {
+    -webkit-transition: opacity 0.5s ease-in 0.3s;
+    transition: opacity 0.5s ease-in 0.3s;
+}
+
+.tesla-slide__img img {
+    max-width: 100%;
+    min-width: 600px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin: -100px 0 0 55%;
+}
+
+@media only screen and (max-width: 480px) {
+    .tesla-slide__img img {
+        margin: -10px 0 0 40%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide__img img {
+        max-width: 85%;
+        -webkit-transform: none;
+        transform: none;
+        margin: -40px 0 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .tesla-slide__img img {
+        min-width: 800px;
+        margin-top: 0;
+        max-width: 1300px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slide__img img {
+        max-width: 2000px;
+    }
+}
+
+.tesla-slide__bckg {
+    position: absolute;
+    right: 5%;
+    bottom: 38%;
+    width: 250px;
+    height: calc(var(--bckg-height) / 2.2);
+    z-index: -1;
+}
+
+@media only screen and (max-width: 480px) {
+    .tesla-slide__bckg {
+        right: 3%;
+        bottom: 35%;
+        height: calc(var(--bckg-height) / 2.5);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide__bckg {
+        width: 300px;
+        height: calc(var(--bckg-height) / 1.8);
+        bottom: 40%;
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .tesla-slide__bckg {
+        width: 400px;
+        height: calc(var(--bckg-height) / 1.5);
+        right: -2%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slide__bckg {
+        bottom: 56%;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slide__bckg {
+        height: var(--bckg-height);
+        width: 570px;
+        right: 2%;
+    }
+}
+
+.tesla-slide__bckg:before,
+.tesla-slide__bckg:after {
+    position: absolute;
+    content: '';
+    -webkit-transition: all 0.8s ease-in-out 0.3s;
+    transition: all 0.8s ease-in-out 0.3s;
+}
+
+.tesla-slide__bckg:after {
+    width: calc(var(--bckg-height) * 1.2);
+    height: calc(var(--bckg-height) * 0.8);
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    background: radial-gradient(ellipse at center, var(--car-color) 25%, transparent 65%);
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide__bckg:after {
+        width: calc(var(--bckg-height) * 2);
+        height: calc(var(--bckg-height) * 1.5);
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slide__bckg:after {
+        width: calc(var(--bckg-height) * 3.5);
+        height: calc(var(--bckg-height) * 2.2);
+    }
+}
+
+.tesla-slide__bckg:before {
+    width: calc(var(--bckg-height) * 1.5);
+    height: calc(var(--bckg-height) * 0.7);
+    top: 70%;
+    left: -40%;
+    opacity: var(--shadow-opacity);
+    background: radial-gradient(ellipse at center, var(--car-color) 10%, transparent 65%);
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide__bckg:before {
+        width: calc(var(--bckg-height) * 3.5);
+        height: var(--bckg-height);
+        top: 100%;
+        left: -80%;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slide__bckg:before {
+        width: calc(var(--bckg-height) * 4.5);
+    }
+}
+
+.tesla-slide__bckg-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    background: var(--car-color);
+    -webkit-transition: all 0.8s ease-in 0.3s, background 0s, -webkit-transform 0.8s ease-in-out;
+    transition: all 0.8s ease-in 0.3s, background 0s, -webkit-transform 0.8s ease-in-out;
+    transition: all 0.8s ease-in 0.3s, transform 0.8s ease-in-out, background 0s;
+    transition: all 0.8s ease-in 0.3s, transform 0.8s ease-in-out, background 0s, -webkit-transform 0.8s ease-in-out;
+}
+
+.tesla-slide__bckg--enter .tesla-slide__bckg-fill {
+    height: 0;
+    top: 0;
+    bottom: 100%;
+    opacity: 0.3;
+    -webkit-transform: translateY(-20px) scale(1.1);
+    transform: translateY(-20px) scale(1.1);
+    -webkit-transition: all 0.7s ease-in 0.5s, background 0s, -webkit-transform 0.8s ease-in-out 0.1s;
+    transition: all 0.7s ease-in 0.5s, background 0s, -webkit-transform 0.8s ease-in-out 0.1s;
+    transition: all 0.7s ease-in 0.5s, transform 0.8s ease-in-out 0.1s, background 0s;
+    transition: all 0.7s ease-in 0.5s, transform 0.8s ease-in-out 0.1s, background 0s, -webkit-transform 0.8s ease-in-out 0.1s;
+}
+
+.tesla-slide__bckg--enter:before,
+.tesla-slide__bckg--enter:after {
+    opacity: 0;
+}
+
+.animation-back .tesla-slide__bckg--enter .tesla-slide__bckg-fill {
+    bottom: 0;
+    top: 100%;
+    -webkit-transform: translateY(10px) scale(0.9);
+    transform: translateY(10px) scale(0.9);
+}
+
+.tesla-slide__bckg--exit .tesla-slide__bckg-fill {
+    -webkit-transition: all 0.6s ease-in 0.1s, background 0s;
+    transition: all 0.6s ease-in 0.1s, background 0s;
+    height: 0;
+    top: 100%;
+    bottom: 0;
+    opacity: 0.2;
+    -webkit-transform: translateY(10px) scale(0.9);
+    transform: translateY(10px) scale(0.9);
+}
+
+.tesla-slide__bckg--exit:before {
+    -webkit-transition: all 0.6s ease-in-out 0.2s;
+    transition: all 0.6s ease-in-out 0.2s;
+}
+
+.tesla-slide__bckg--exit:before,
+.tesla-slide__bckg--exit:after {
+    opacity: 0;
+}
+
+.animation-back .tesla-slide__bckg--exit .tesla-slide__bckg-fill {
+    top: 0;
+    bottom: 100%;
+    -webkit-transform: translateY(-20px) scale(1.1);
+    transform: translateY(-20px) scale(1.1);
+}
+
+
+/* Slide Item Aside
+-------------------------------------------------------------- */
+
+.tesla-slide-aside {
+    text-align: left;
+    /* Slide Item Whole name
+  -------------------------------------------------------------- */
+    /* Slide Item Name
+  -------------------------------------------------------------- */
+    /* Slide Item Description
+  -------------------------------------------------------------- */
+    /* Slide Button
+  -------------------------------------------------------------- */
+}
+
+@media only screen and (max-width: 767px) {
+    .tesla-slide-aside {
+        padding-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .tesla-slide-aside {
+        padding-left: 0;
+    }
+}
+
+.tesla-slide-aside__wholename {
+    height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-aside__wholename {
+        height: 75px;
+    }
+}
+
+.tesla-slide-aside__wholename>span {
+    height: 55px;
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-aside__wholename>span {
+        height: 75px;
+    }
+}
+
+.tesla-slide-aside__name {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+    .tesla-slide-aside__name {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .tesla-slide-aside__name {
+        width: 230px;
+    }
+}
+
+.tesla-slide-aside__name-part {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    display: block;
+    margin-left: 15px;
+    -webkit-transition: top 0.5s ease-out 0.1s, opacity 0.4s linear;
+    transition: top 0.5s ease-out 0.1s, opacity 0.4s linear;
+}
+
+.tesla-slide-aside__name-part--enter {
+    left: 0;
+    top: 100%;
+    opacity: 0;
+}
+
+.animation-back .tesla-slide-aside__name-part--enter {
+    top: -100%;
+}
+
+.tesla-slide-aside__name-part--exit {
+    left: 0;
+    top: -100%;
+    opacity: 0;
+    -webkit-transition: top 0.5s ease-out 0.4s, opacity 0.4s linear 0.4s;
+    transition: top 0.5s ease-out 0.4s, opacity 0.4s linear 0.4s;
+}
+
+.animation-back .tesla-slide-aside__name-part--exit {
+    top: 100%;
+}
+
+.tesla-slide-aside__desc {
+    position: relative;
+    margin: 10px 0 0;
+    max-width: 420px;
+    height: 5rem;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-aside__desc {
+        margin-top: 40px;
+    }
+}
+
+.tesla-slide-aside__desc-text {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    line-height: 2.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    opacity: 1;
+    -webkit-transition: top 0.4s ease-out 0.2s, bottom 0.4s ease-out 0.2s, opacity 0.4s ease-out 0.3s, line-height 0.3s ease-out 0.5s;
+    transition: top 0.4s ease-out 0.2s, bottom 0.4s ease-out 0.2s, opacity 0.4s ease-out 0.3s, line-height 0.3s ease-out 0.5s;
+}
+
+.tesla-slide-aside__desc-text--enter {
+    left: 0;
+    top: 100%;
+    bottom: 0;
+    opacity: 0;
+    line-height: 4rem;
+}
+
+.animation-back .tesla-slide-aside__desc-text--enter {
+    top: -100%;
+    bottom: auto;
+    line-height: 3rem;
+}
+
+.tesla-slide-aside__desc-text--exit {
+    -webkit-transition: bottom 0.5s ease-out 0.3s, top 0.5s ease-out 0.3s, opacity 0.4s ease-out 0.3s, line-height 0.3s ease-out 0.2s;
+    transition: bottom 0.5s ease-out 0.3s, top 0.5s ease-out 0.3s, opacity 0.4s ease-out 0.3s, line-height 0.3s ease-out 0.2s;
+    left: 0;
+    top: auto;
+    bottom: 100%;
+    opacity: 0;
+    line-height: 4rem;
+}
+
+.animation-back .tesla-slide-aside__desc-text--exit {
+    top: 100%;
+    bottom: auto;
+}
+
+.tesla-slide-aside__button {
+    position: relative;
+    height: 50px;
+    margin-top: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-aside__button {
+        margin-top: 50px;
+    }
+}
+
+.tesla-slide-aside__button button {
+    z-index: 1;
+}
+
+
+/* Slide Params
+  -------------------------------------------------------------- */
+
+.tesla-slide-params {
+    margin: 250px 0 30px;
+}
+
+@media only screen and (max-width: 480px) {
+    .tesla-slide-params {
+        margin-top: 350px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-params {
+        margin-top: 130px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .tesla-slide-params {
+        margin: 170px 0 20px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slide-params {
+        margin: 225px 0 80px;
+    }
+}
+
+.tesla-slide-params__list {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slide-params__list {
+        padding-left: 10%;
+    }
+}
+
+.tesla-slide-params__item {
+    text-align: center;
+    width: 190px;
+}
+
+.tesla-slide-params__item:first-of-type .tesla-slide-params__wrapper {
+    padding-left: 10px;
+    width: 160px;
+    text-align: left;
+}
+
+.tesla-slide-params__item:first-of-type .tesla-slide-params__wrapper .tesla-slide-params__value {
+    padding-left: 5px;
+}
+
+.tesla-slide-params__wrapper {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.tesla-slide-params__value {
+    padding: 0 8px;
+    font-size: 3.1rem;
+    -webkit-transition: opacity 0.05s ease-in;
+    transition: opacity 0.05s ease-in;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-params__value {
+        font-size: 4.8rem;
+    }
+}
+
+.tesla-slide-params__value--enter {
+    opacity: 0.7;
+}
+
+.tesla-slide-params__value--exit {
+    opacity: 0;
+}
+
+.tesla-slide-params__prefix {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slide-params__prefix {
+        font-size: 3rem;
+    }
+}
+
+.tesla-slide-params__name {
+    margin-top: -5px;
+    font-size: 1.4rem;
+}
+
+.tesla-slide-params__sufix {
+    font-family: "BebasNeue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.9px;
+    font-size: initial;
+}
+
+
+/* Slider
+-------------------------------------------------------------- */
+
+.tesla-slider {
+    padding-top: 20px;
+    /* Mouse scroll
+  -------------------------------------------------------------- */
+}
+
+@media only screen and (min-width: 992px) {
+    .tesla-slider {
+        padding-top: 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slider {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slider {
+        padding-top: 135px;
+    }
+}
+
+.tesla-slider__scroll {
+    -webkit-box-ordinal-group: 4;
+    order: 3;
+    width: 100%;
+}
+
+.tesla-slider__scroll img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Slider Navigation
+-------------------------------------------------------------- */
+
+
+/* Slider Navigation List
+  -------------------------------------------------------------- */
+
+
+/* Slider Navigation List item
+  -------------------------------------------------------------- */
+
+.header-wrapper {
+    width: 100%;
+    height: 42px;
+    background-color: #EEFF00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrapper h2 {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: oswald;
+    display: inline-block;
+}
+
+.contact {
+    border: 1px solid;
+    letter-spacing: 2.16px;
+    font-size: 0.7vh;
+    width: 9.701vw;
+    height: 6.101vh;
+    color: #292F33;
+    font-family: oswald;
+    background-color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.products {
+    margin-top: 4.509vh;
+    margin-left: 4.102vw;
+    letter-spacing: 2.16px;
+    font-size: 0.7vh;
+    width: 12.240vw;
+    height: 6.101vh;
+    color: white;
+    font-family: oswald;
+    background-color: #292F33;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.WRAP-1 {
+    margin-top: 1.989vh;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    height: 8.915vw;
+}
+
+.WRAP-1 h1 {
+    left: 50%;
+    width: 9.375vw;
+    position: absolute;
+    font-size: auto;
+    font-family: oswald;
+    font-weight: bold;
+}
+
+.wrap-img {
+    margin-top: 24vh;
+    height: 50vh;
+    background-color: black;
+    ;
+    width: 100vw;
+}
+
+.X {
+    top: 35%;
+    z-index: 3;
+    left: 25%;
+    position: absolute;
+    width: 55.284vw;
+    height: 55.751vh;
+}
+
+.tesla {
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+}
+
+.wrap-tesla {
+    margin-left: 15.521vw;
+    text-align: center;
+    z-index: 4;
+    top: 25%;
+    width: 74.284vw;
+    height: 71.751vh;
+}
+
+.wrap-tesla h4 {
+    font-size: 0.790vw;
+    display: inline-block;
+}
+
+.wrap-tesla h1 {
+    color: blue;
+    font-family: oswald;
+    font-weight: bold;
+    font-size: 2.765vw;
+    letter-spacing: 1.26px;
+}
+
+.wrap-tesla h3 {
+    font-family: oswald;
+    font-weight: bold;
+    font-size: 0.790vw;
+    letter-spacing: 1.26px;
+}
+
+.wrap-tesla h4:not(:last-child)::after {
+    content: '';
+    background-color: black;
+    display: inline-block;
+    height: 12px;
+    width: 1px;
+    margin-left: 9px;
+    margin-right: 9px;
+    font-family: oswald;
+    font-weight: bold;
+    letter-spacing: 1.26px;
+}
+
+.fa-facebook-f {
+    background-color: yellow;
+}
+
+.icons {
+    width: 10vw;
+    padding-left: 3vw;
+    padding-top: 45vh;
+    display: flex;
+}
+
+.main {
+    width: 70.833vw;
+    height: 63.830vh;
+    background-color: #E6EBEF;
+    margin-left: 15%;
+}
+
+.flex {
+    z-index: 4;
+    justify-content: space-between;
+    border: 1px solid black;
+    text-align: center;
+    width: 18.367vw;
+    height: 45.043vh;
+}
+
+.main h1 {
+    text-align: center;
+    font-size: 1.712vw;
+    font-family: oswald;
+    font-weight: bold;
+}
+
+.flex img {
+    justify-content: space-between;
+    width: 16.367vw;
+    height: 27.101vh;
+}
+
+.flex h2 {
+    margin-top: px;
+    font-size: 0.790vw;
+    font-family: oswald;
+    font-weight: bold;
+}
+
+.flex h3 {
+    margin-top: 25px;
+    font-size: 0.790vw;
+    font-family: oswald;
+    font-weight: bold;
+}
+
+.main-div {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.sec2 {
+    background-color: #E6EBEF;
+    width: 100%;
+    height: 63.830vh;
+    text-align: center;
+}
+
+.main h4 {
+    font-family: oswald;
+    font-weight: bold;
+    font-size: 12px;
+    color: #292F33;
+    margin-top: 3%;
+}
+
+.sec3 {
+    background-color: blue;
+    height: 100vh;
+    width: 100%;
+}
+
+.footer {
+    overflow-y: hidden;
+    background-color: #121212;
+    background-repeat: no-repeat;
+    height: 355px;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+}
+
+.footersat {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.footertext {
+    color: white;
+    font-weight: bold;
+    width: 18.433vw;
+    margin: 25px 0;
+}
+
+.footerfooter {
+    font-family: Poppins;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footerbox {
+    margin: 90px 0px 0 0px;
+}
+
+.icons {
+    font-size: 30px;
+    margin: 3vw 42vh;
+}
+
+.icon {
+    color: white;
+}
+
+.fa-google-plus,
+.fa-twitter,
+.fa-facebook {
+    margin: 10px;
+}
+
+.fa-facebook:hover {
+    color: teal;
+}
+
+.fa-twitter:hover {
+    color: teal;
+}
+
+.fa-google-plus:hover {
+    color: teal;
+}
+
+.footnav {
+    font-size: 1.053vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+.footnavtext {
+    height: 1vh;
+    font-size: 1.053vw;
+    color: white;
+    font-weight: bold;
+}
+
+.footnavtext2 {
+    color: #5863F8;
+    margin-top: 15px;
+}
+
+.footnavtext3 {
+    color: white;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.last {
+    text-align: center;
+    display: inline-block;
+    width: 45vw;
+    height: 50vh;
+    padding-top: 5vh;
+    font-family: oswalad;
+    color: white;
+    font-weight: bolder;
+}
+
+.last h2 {
+    margin-top: 5vh;
+    font-size: 2.5vh;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: black;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+nav ul li a {
+    float: right;
+    margin-right: 4vw;
+    font-weight: bold;
+    font-family: oswald;
+    font-size: 0.781vw;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    margin-top: 4vh;
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slider-navigation {
+        -webkit-box-ordinal-group: 3;
+        order: 2;
+        width: 150px;
+    }
+}
+
+.tesla-slider-navigation__list {
+    display: -webkit-box;
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slider-navigation__list {
+        margin: 5px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slider-navigation__list {
+        display: block;
+        -webkit-box-ordinal-group: 3;
+        order: 2;
+        text-align: right;
+    }
+}
+
+.tesla-slider-navigation__item {
+    display: inline-block;
+    padding: 0 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slider-navigation__item {
+        font-size: 1.5rem;
+        letter-spacing: 0.6px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slider-navigation__item {
+        display: block;
+        margin-top: 90px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .tesla-slider-navigation__item {
+        margin-top: 95px;
+    }
+}
+
+.tesla-slider-navigation__item:first-of-type {
+    margin-top: 0;
+}
+
+.tesla-slider-navigation__link--active {
+    font-size: 1.2rem;
+    -webkit-transition: font-size 0.3s linear, color 0.2s linear 0.8s;
+    transition: font-size 0.3s linear, color 0.2s linear 0.8s;
+}
+
+@media only screen and (min-width: 768px) {
+    .tesla-slider-navigation__link--active {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tesla-slider-navigation__link--active {
+        font-size: 1.8rem;
+    }
+}

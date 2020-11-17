@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Tesla hero slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper">
+            <img src="img/Path 2370.png" alt="photo" style="height: 16px;">
+            <h2>NEW STUFF FOR YOU IN OUR STORE TODAY 25% DISCOUNT</h2>
+        </div>
+    </header>
+    <section>
+        <header>
+            <div class="WRAP-1">
+                <div>
+                    <button class="products">PRODUCTS</button>
+                    <button class="contact">CONTACT</button>
+                </div>
+
+                <h1>SELLER</h1>
+
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+                          <i class="fas fa-bars"></i>
+                      </label>
+                    <ul>
+                        <li>
+                            <a href="#">B2B</a>
+                        </li>
+                        <li>
+                            <a href="#">CLICK & COLLET</a>
+                        </li>
+                        <li>
+                            <a href="#">LOG IN</a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+        </header>
+        <div>
+            <img src="img/cityscape.png" style="width: 100%; height: 25.464vh; position: absolute; z-index: 1;" alt="">
+        </div>
+        <div class="wrap-img">
+            <div class="wrap-tesla" style="position: absolute;">
+                <img src="img/img_car-1.png" class="tesla" alt="tesla png">
+                <h3>LICENCED CAR</h3>
+                <h1>Ultra-hight Quality</h1>
+                <h4>12V BATTERY</h4>
+                <h4>3 SPEEDS</h4>
+                <h4>ADJUSTABLE SEATS</h4>
+                <h4>LED LIGHTS</h4>
+            </div>
+            <img src="img/X_bg.png" class="X" alt="x">
+            <div class="icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </section>
+    <!-- partial:index.partial.html -->
+    <div id="root"></div>
+    <!-- partial -->
+    <script src='https://unpkg.com/react@16/umd/react.development.js'></script>
+    <script src='https://unpkg.com/react-dom@16/umd/react-dom.development.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/2.2.0/react-transition-group.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.1/prop-types.js'></script>
+    <script src='https://unpkg.com/lodash@4.17.5/lodash.js'></script>
+    <script src='https://unpkg.com/bezier-easing@2.1.0/dist/bezier-easing.min.js'></script>
+    <script src="./script.js"></script>
+    <section class="sec3">
+        <div class="last">
+            <h2>Elon Musk co-founded and leads Tesla, SpaceX, Neuralink and The Boring Company. As the co-founder and CEO of Tesla, Elon leads all product design, engineering and global manufacturing of the company's electric vehicles, battery products and
+                solar energy products.</h2>
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="768vw" height="376vh" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+            <style>
+                .mapouter {
+                    float: right;
+                    text-align: right;
+                    height: 50vh;
+                    width: 50vw;
+                }
+                
+                .gmap_canvas {
+                    margin-bottom: 0%;
+                    overflow: hidden;
+                    background: none!important;
+                    height: 100%;
+                    width: 100%;
+                }
+            </style>
+        </div>
+
+        <img src="img/Upgrades.webp" alt="" style="width: 50%;float: left; height: 50%;">
+        <img src="img/Tesla-Cybertruck-759.jpg" alt="" style="float: right; height: 50%; width: 50%">
+
+    </section>
+    <section class="footer">
+        <div class="footerfooter">
+            <div class="footerbox">
+                <p class="footersat">SIMPLE</p>
+                <p class="footertext">Our hotel is an image of quality and profesionalism combined with hard work and precision. You can expect only the best services from our staff</p>
+            </div>
+            <div class="footnav">
+                <p class="footnavtext">Useful Links</p>
+                <p class="footnavtext2">Blog</p>
+                <p class="footnavtext2">Rooms</p>
+                <p class="footnavtext2">Gift card</p>
+                <p class="footnavtext2">Testimonials</p>
+            </div>
+            <div class="footnav">
+                <p class="footnavtext">Privacy</p>
+                <p class="footnavtext2">Career</p>
+                <p class="footnavtext2">About us</p>
+                <p class="footnavtext2">Contact us</p>
+                <p class="footnavtext2">Services</p>
+            </div>
+            <div class="footnav">
+                <p class="footnavtext">Contact info</p>
+                <p class="footnavtext3">example@yahoo.com</p>
+                <p class="footnavtext3">032 2 22 33 55</p>
+                <p class="footnavtext3">3 O Tumaniani str</p>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
